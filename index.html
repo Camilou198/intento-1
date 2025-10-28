@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Ángela 💛</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #ffeef0;
+      background-image: radial-gradient(#ffb6c1 1px, transparent 1px),
+                        radial-gradient(#ffc0cb 1px, transparent 1px);
+      background-size: 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", cursive;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff4081;
+      text-shadow: 2px 2px 8px rgba(255, 64, 129, 0.4);
+      text-align: center;
+    }
+
+    .flowers {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .sunflower {
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle, #ffeb3b 60%, #8b5a2b 61%);
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
+    }
+
+    .sunflower::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      background: repeating-conic-gradient(
+        from 0deg,
+        #fdd835 0deg 20deg,
+        #fbc02d 20deg 40deg
+      );
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      background: #ff80ab;
+      border: none;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s;
+    }
+
+    button:hover {
+      background: #ff4081;
+      transform: scale(1.1);
+    }
+
+    #heart {
+      position: absolute;
+      font-size: 100px;
+      color: red;
+      display: none;
+      animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌻 Te amo demasiado, Ángela 💕</h1>
+
+  <div class="flowers">
+    <div class="sunflower"></div>
+    <div class="sunflower"></div>
+    <div class="sunflower"></div>
+    <div class="sunflower"></div>
+    <div class="sunflower"></div>
+  </div>
+
+  <div class="buttons">
+    <button id="yes">Sí quiero estar contigo 💖</button>
+    <button id="no">No 😳</button>
+  </div>
+
+  <div id="heart">❤️</div>
+
+  <script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const heart = document.getElementById("heart");
+
+    yesBtn.addEventListener("click", () => {
+      heart.style.display = "block";
+      heart.style.left = "50%";
+      heart.style.top = "50%";
+      heart.style.transform = "translate(-50%, -50%)";
+    });
+
+    noBtn.addEventListener("click", () => {
+      const size = noBtn.getBoundingClientRect();
+      const yesSize = yesBtn.getBoundingClientRect();
+
+      yesBtn.style.width = yesSize.width + 40 + "px";
+      yesBtn.style.height = yesSize.height + 10 + "px";
+      yesBtn.style.fontSize = parseFloat(window.getComputedStyle(yesBtn).fontSize) + 3 + "px";
+
+      if (yesBtn.offsetWidth > window.innerWidth * 0.8) {
+        yesBtn.style.position = "fixed";
+        yesBtn.style.top = "0";
+        yesBtn.style.left = "0";
+        yesBtn.style.width = "100vw";
+        yesBtn.style.height = "100vh";
+        yesBtn.style.fontSize = "40px";
+        yesBtn.innerText = "¡Sabía que dirías que sí! 💞";
+        noBtn.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
