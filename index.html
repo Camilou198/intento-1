@@ -1,150 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Ángela 💛</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Ángela 🌻💛</title>
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background-color: #ffeef0;
-      background-image: radial-gradient(#ffb6c1 1px, transparent 1px),
-                        radial-gradient(#ffc0cb 1px, transparent 1px);
-      background-size: 40px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-family: "Comic Sans MS", cursive;
-      overflow: hidden;
-      position: relative;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff6b81, #ff9aa2, #ffc1cc);
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    overflow-x: hidden;
+    color: white;
+  }
 
-    h1 {
-      font-size: 2.5em;
-      color: #ff4081;
-      text-shadow: 2px 2px 8px rgba(255, 64, 129, 0.4);
-      text-align: center;
-    }
+  h1 {
+    color: #fff5f5;
+    font-size: 2.3em;
+    margin-top: 40px;
+    text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.4);
+  }
 
-    .flowers {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
+  #question {
+    font-size: 1.3em;
+    color: #ffe5ec;
+  }
 
-    .sunflower {
-      width: 80px;
-      height: 80px;
-      background: radial-gradient(circle, #ffeb3b 60%, #8b5a2b 61%);
-      border-radius: 50%;
-      position: relative;
-      box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
-    }
+  .flowers {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+  }
 
-    .sunflower::before {
-      content: "";
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      right: -20px;
-      bottom: -20px;
-      background: repeating-conic-gradient(
-        from 0deg,
-        #fdd835 0deg 20deg,
-        #fbc02d 20deg 40deg
-      );
-      border-radius: 50%;
-      z-index: -1;
-    }
+  .sunflower {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, yellow 60%, brown 61%);
+    border-radius: 50%;
+    position: relative;
+  }
 
-    .buttons {
-      margin-top: 40px;
-      display: flex;
-      gap: 20px;
-    }
+  .stem {
+    width: 10px;
+    height: 80px;
+    background: green;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
 
-    button {
-      background: #ff80ab;
-      border: none;
-      color: white;
-      padding: 15px 30px;
-      font-size: 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: transform 0.3s ease, background 0.3s;
-    }
+  .petal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: gold;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform-origin: 50% 100%;
+  }
 
-    button:hover {
-      background: #ff4081;
-      transform: scale(1.1);
-    }
+  button {
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-    #heart {
-      position: absolute;
-      font-size: 100px;
-      color: red;
-      display: none;
-      animation: heartbeat 1s infinite;
-    }
+  #yesBtn {
+    background-color: #ffcc00;
+  }
 
-    @keyframes heartbeat {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-      100% { transform: scale(1); }
-    }
-  </style>
+  #noBtn {
+    background-color: #ff4d4d;
+  }
+
+  #message {
+    font-size: 2em;
+    color: #fff;
+    margin-top: 30px;
+    display: none;
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7);
+  }
+
+  #backBtn {
+    display: none;
+    margin-top: 20px;
+    background-color: lightblue;
+  }
+
+  .crying {
+    font-size: 3em;
+    animation: shake 0.5s infinite alternate;
+  }
+
+  @keyframes shake {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+  }
+
+  .extra-flowers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+</style>
 </head>
 <body>
-  <h1>🌻 Te amo demasiado, Ángela 💕</h1>
+  <h1>💖 Te amo demasiado Ángela, eres la mujer de mi vida y quiero ser tu novio 💖</h1>
+  <p id="question">¿Quieres estar conmigo mucho tiempo, y prender velitas juntos en diciembre?</p>
 
-  <div class="flowers">
-    <div class="sunflower"></div>
-    <div class="sunflower"></div>
-    <div class="sunflower"></div>
-    <div class="sunflower"></div>
-    <div class="sunflower"></div>
-  </div>
+  <div class="flowers" id="flowers"></div>
 
-  <div class="buttons">
-    <button id="yes">Sí quiero estar contigo 💖</button>
-    <button id="no">No 😳</button>
-  </div>
+  <button id="yesBtn">Sí quiero estar contigo 💛</button>
+  <button id="noBtn">No 😢</button>
 
-  <div id="heart">❤️</div>
+  <div id="message">Sabía que dirías que sí ❤️</div>
+  <button id="backBtn">Vuelve a intentarlo</button>
+
+  <div class="extra-flowers" id="extraFlowers"></div>
 
   <script>
-    const yesBtn = document.getElementById("yes");
-    const noBtn = document.getElementById("no");
-    const heart = document.getElementById("heart");
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const message = document.getElementById('message');
+    const backBtn = document.getElementById('backBtn');
+    const flowersDiv = document.getElementById('flowers');
+    const extraFlowers = document.getElementById('extraFlowers');
+    const question = document.getElementById('question');
 
-    yesBtn.addEventListener("click", () => {
-      heart.style.display = "block";
-      heart.style.left = "50%";
-      heart.style.top = "50%";
-      heart.style.transform = "translate(-50%, -50%)";
+    let noClicks = 0;
+
+    // 🌻 Crear las flores del ramo inicial
+    function createSunflower() {
+      const flowerContainer = document.createElement('div');
+      flowerContainer.style.display = 'flex';
+      flowerContainer.style.flexDirection = 'column';
+      flowerContainer.style.alignItems = 'center';
+
+      const sunflower = document.createElement('div');
+      sunflower.classList.add('sunflower');
+
+      for (let i = 0; i < 12; i++) {
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.style.transform = `rotate(${i * 30}deg) translateY(-30px)`;
+        sunflower.appendChild(petal);
+      }
+
+      const stem = document.createElement('div');
+      stem.classList.add('stem');
+      flowerContainer.appendChild(sunflower);
+      flowerContainer.appendChild(stem);
+
+      return flowerContainer;
+    }
+
+    // Crear 3 girasoles iniciales
+    for (let i = 0; i < 3; i++) {
+      flowersDiv.appendChild(createSunflower());
+    }
+
+    // 💛 Evento del botón SÍ
+    yesBtn.addEventListener('click', () => {
+      message.style.display = 'block';
+      flowersDiv.innerHTML = '';
+      extraFlowers.innerHTML = '';
+      question.style.display = 'none';
+      yesBtn.style.display = 'none';
+      noBtn.style.display = 'none';
+      backBtn.style.display = 'inline-block';
+
+      // Aparecen más flores (ramo completo)
+      for (let i = 0; i < 8; i++) {
+        extraFlowers.appendChild(createSunflower());
+      }
     });
 
-    noBtn.addEventListener("click", () => {
-      const size = noBtn.getBoundingClientRect();
-      const yesSize = yesBtn.getBoundingClientRect();
+    // 😭 Evento del botón NO
+    noBtn.addEventListener('click', () => {
+      noClicks++;
+      yesBtn.style.transform = `scale(${1 + noClicks * 0.3})`;
 
-      yesBtn.style.width = yesSize.width + 40 + "px";
-      yesBtn.style.height = yesSize.height + 10 + "px";
-      yesBtn.style.fontSize = parseFloat(window.getComputedStyle(yesBtn).fontSize) + 3 + "px";
+      const emoji = document.createElement('div');
+      emoji.textContent = '😭';
+      emoji.classList.add('crying');
+      extraFlowers.appendChild(emoji);
 
-      if (yesBtn.offsetWidth > window.innerWidth * 0.8) {
-        yesBtn.style.position = "fixed";
-        yesBtn.style.top = "0";
-        yesBtn.style.left = "0";
-        yesBtn.style.width = "100vw";
-        yesBtn.style.height = "100vh";
-        yesBtn.style.fontSize = "40px";
-        yesBtn.innerText = "¡Sabía que dirías que sí! 💞";
-        noBtn.style.display = "none";
+      if (noClicks > 5) {
+        noBtn.style.display = 'none';
+      }
+    });
+
+    // 🔙 Volver al inicio
+    backBtn.addEventListener('click', () => {
+      message.style.display = 'none';
+      question.style.display = 'block';
+      yesBtn.style.display = 'inline-block';
+      noBtn.style.display = 'inline-block';
+      backBtn.style.display = 'none';
+      yesBtn.style.transform = 'scale(1)';
+      extraFlowers.innerHTML = '';
+      flowersDiv.innerHTML = '';
+      noClicks = 0;
+
+      // Volver a mostrar las flores originales
+      for (let i = 0; i < 3; i++) {
+        flowersDiv.appendChild(createSunflower());
       }
     });
   </script>
